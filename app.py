@@ -26,14 +26,21 @@ app = Flask(__name__)
 # create a root.
 @app.route('/')
 def welcome():
+#    return (
+#        f"Welcome to the Justice League API!<br/>"
+#        f"Available Routes:<br/>"
+#        f"/api/v1.0/justice-league<br/>"
+#        f"/api/v1.0/justice-league/superhero/batman"
+#    )
     response = make_response(
     '''
     Welcome to the Climate Analysis API!
+
     Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
-    /api/v1.0/temp/start/end
+        /api/v1.0/precipitation
+        /api/v1.0/stations
+        /api/v1.0/tobs
+        /api/v1.0/temp/start/end
     ''')
     response.headers["content-type"] = "text/plain"
     return response
@@ -45,7 +52,7 @@ def precipitation():
     session = Session(engine)
 
     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
-    precipitation = session.query(Measurement.date, Measurement.prcp).\
+    precipitation = session.query(Measurement.date, Measurement.prcp).  \
         filter(Measurement.date >= prev_year).all()
 
     session.close()
@@ -73,8 +80,8 @@ def temp_monthly():
 
     # database session
     session = Session(engine)
-    results = session.query(Measurement.tobs).\
-        filter(Measurement.station == 'USC00519281').\
+    results = session.query(Measurement.tobs).          \
+        filter(Measurement.station == 'USC00519281').   \
         filter(Measurement.date >= prev_year).all()
 
     session.close()
@@ -94,8 +101,8 @@ def stats(start, end=None):
     if not end:
         results = session.query(*sel).filter(Measurement.date >= start).all()
     else:
-        results = session.query(*sel).\
-            filter(Measurement.date >= start).\
+        results = session.query(*sel).                  \
+            filter(Measurement.date >= start).          \
             filter(Measurement.date <= end).all()
     session.close()
 
