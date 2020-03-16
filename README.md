@@ -15,5 +15,10 @@ In December, there are 1405 precipitation records. The mean is 0.21 inches, stan
 There are total 1517 temperature records. The mean is 71.0&deg;F, the standard deviation is 3.7&deg;F. The lowest is 56.0&deg;F, the highest is 83&deg;F. The 25% quartile is 69.0&deg;F, 50% quartile is 71.0&deg;F, the 75% quartile is 74.0&deg;F. 
 
 From precipitation box-and-whisker plot, both June and December are typically without rains. While both June and December have heavy raining days, the heaviest rainfall happens in December.  
-The June temperature is great for beach going in Oahu. Average temperature is about 3.9&deg;F higher than in December. The "chilly" day temperature records in June are much closer to the box. There are a lot more extreme "chilly" days in December.
+![Fig 1](https://github.com/pqrt12/surfs_up/blob/master/Fig_1.png)  
+The June temperature is great for beach going in Oahu. Average temperature is about 3.9&deg;F higher than in December. The "chilly" day temperature records in June are much closer to the box. There are a lot more extreme "chilly" days in December.  
+![Fig_2](https://github.com/pqrt12/surfs_up/blob/master/Fig_2.png)  
+
+The precipitation is analyzed per rainfall, it would have been more meaningful in terms of days when the rainfall exceeds a certain threshold, for example half an inch.  
+While both temperature and precipitation are analyzed across all stations, it would be more precise if we focus on the data from the nearby stations.  
 
